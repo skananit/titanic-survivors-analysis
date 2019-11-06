@@ -243,17 +243,17 @@ predictionResults &lt;- data.frame(Survived = prediction)
 head(predictionResults)</code></pre>
 <pre><code>##    Survived
 ## 1         0
-## 7         0
-## 11        0
-## 14        0
-## 17        1
+## 2         1
+## 8         0
+## 9         1
+## 11        1
 ## 22        0</code></pre>
 <pre class="r"><code># claculate misclassification rate
 wrongPredictions = sum(prediction != testingset$Survived) 
 sizeOfTestSet = dim(testingset)[1]
 misclassification = wrongPredictions / sizeOfTestSet
 print(paste(&quot;Missclassification Rate: &quot;, round(misclassification*100,2), &quot;%&quot;))</code></pre>
-<pre><code>## [1] &quot;Missclassification Rate:  22.29 %&quot;</code></pre>
+<pre><code>## [1] &quot;Missclassification Rate:  24.33 %&quot;</code></pre>
 <p>Our decision tree indicates that females with Pclass &lt; 3 (so PClass 1 and 2) had the highest rate of survival (23%) for the training/testing dataset used. This rate will slightly vary evrytime a new training/testing set is used.</p>
 <p>We can conclude that women and children were prioritized in the evacuation as they had significantly higher survival rates according to our data. More expensive PClasses were also prioritized (PClass 1 and 2) as females who were in lower PClasses had a higher chance of survival according to our decision tree.</p>
 <pre class="r"><code>library(&quot;ggplot2&quot;)
