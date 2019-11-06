@@ -2,4 +2,3 @@ name: "Titanic Survivors Data Analysis"
 output_dir: "."
 output:
   html_document:
-    theme: paper
